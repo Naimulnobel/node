@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-app.get('/', function(req, res){
+app.get('/', function (req, res) {
     res.send("hello")
 })
-app.listen(3000,() => console.log("surver is running"));
+app.listen(3000, () => console.log("surver is running"));
