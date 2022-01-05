@@ -2,13 +2,14 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const path = require('path')
-const adminRoute = require('./routes/admin')
+const adminData = require('./routes/admin')
 const localRoute = require('./routes/shop')
 const rootDir = require('./util/path')
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use('/admin', adminRoute)
+app.use(express.static(path.join(__dirname, 'public')))
+app.use('/admin', adminData.routes)
 app.use(localRoute)
 // app.use('/users',(req, res,next)=> {
 //     res.send('<h1>users list</h1>')
